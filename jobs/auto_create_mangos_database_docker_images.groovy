@@ -2,7 +2,7 @@ def repoList = ['mangosone', 'mangostwo']
 
 repoList.each{ repo ->
 
-  this.freeStyleJob("auto-create-${repo}-docker-server-image") {
+  this.freeStyleJob("auto-create-${repo}-docker-database-image") {
       logRotator(-1, 10)
       wrappers {
         credentialsBinding {
@@ -11,13 +11,13 @@ repoList.each{ repo ->
         }
       }
       scm {
-          github("${repo}/server", 'refs/tags/*')
+          github("${repo}/database", 'master')
       }
       triggers {
           scm('H/5 * * * *')
       }
       steps {
-          shell(readFileFromWorkspace('scripts/build_mangos.sh'))
+          shell(readFileFromWorkspace('scripts/build_mangos_database.sh'))
       }
   }
 

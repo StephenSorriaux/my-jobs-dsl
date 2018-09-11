@@ -2,7 +2,7 @@ def repoList = ['mangosone', 'mangostwo']
 
 repoList.each{ repo ->
 
-  this.freeStyleJob("auto-create-${repo}-docker-server-image") {
+  this.freeStyleJob("auto-create-${repo}-docker-realmd-image") {
       logRotator(-1, 10)
       wrappers {
         credentialsBinding {
@@ -17,7 +17,7 @@ repoList.each{ repo ->
           scm('H/5 * * * *')
       }
       steps {
-          shell(readFileFromWorkspace('scripts/build_mangos.sh'))
+          shell(readFileFromWorkspace('scripts/build_mangos_realmd.sh'))
       }
   }
 
