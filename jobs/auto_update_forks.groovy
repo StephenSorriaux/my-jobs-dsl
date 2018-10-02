@@ -25,6 +25,7 @@ myForks.keySet().each{ repo ->
           branches("${myForks[repo]['branch']}")
           extensions {
             cleanBeforeCheckout()
+            localBranch("${myForks[repo]['branch']}")
           }
         }
       }

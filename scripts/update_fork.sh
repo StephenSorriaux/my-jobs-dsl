@@ -8,4 +8,4 @@ fork_exists=$(git remote | grep fork | wc -l)
 if [ "$fork_exists" -eq 0 ]; then
   git remote add fork git@github.com:StephenSorriaux/${PROJECT}.git
 fi
-git push -f fork HEAD:${BRANCH}
+git push -uf fork ${BRANCH}
