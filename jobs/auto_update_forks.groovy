@@ -4,7 +4,11 @@ def myForks = [
     branch: 'devel'],
   'postgres-operator': [
     ownerAndProject: 'CrunchyData/postgres-operator',
-    branch: 'develop']]
+    branch: 'develop'],
+  'kafka-python': [
+    ownerAndProject: 'dpkp/kafka-python',
+    branch: 'master'],
+  ]]
 
 myForks.keySet().each{ repo ->
 
@@ -25,6 +29,7 @@ myForks.keySet().each{ repo ->
           branches("${myForks[repo]['branch']}")
           extensions {
             cleanBeforeCheckout()
+            localBranch("${myForks[repo]['branch']}")
           }
         }
       }
