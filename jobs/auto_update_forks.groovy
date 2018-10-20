@@ -7,6 +7,9 @@ def myForks = [
     branch: 'develop'],
   'kafka-python': [
     ownerAndProject: 'dpkp/kafka-python',
+    branch: 'master'],
+  'kazoo': [
+    ownerAndProject: 'python-zk/kazoo',
     branch: 'master']
   ]
 
