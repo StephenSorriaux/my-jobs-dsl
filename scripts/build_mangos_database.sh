@@ -14,3 +14,4 @@ docker build -t ssorriaux/${PROJECT}-database-mysql:${VERSION} .
 docker tag ssorriaux/${PROJECT}-database-mysql:${VERSION} ssorriaux/${PROJECT}-database-mysql:latest
 docker push ssorriaux/${PROJECT}-database-mysql:${VERSION}
 docker push ssorriaux/${PROJECT}-database-mysql:latest
+docker rmi ssorriaux/${PROJECT}-database-mysql:latest ssorriaux/${PROJECT}-database-mysql:${VERSION}

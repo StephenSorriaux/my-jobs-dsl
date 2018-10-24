@@ -14,3 +14,4 @@ docker build -t ssorriaux/${PROJECT}-realmd:${VERSION} --build-arg MANGOS_SERVER
 docker tag ssorriaux/${PROJECT}-realmd:${VERSION} ssorriaux/${PROJECT}-realmd:latest
 docker push ssorriaux/${PROJECT}-realmd:${VERSION}
 docker push ssorriaux/${PROJECT}-realmd:latest
+docker rmi ssorriaux/${PROJECT}-realmd:latest ssorriaux/${PROJECT}-realmd:${VERSION}

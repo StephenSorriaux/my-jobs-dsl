@@ -14,3 +14,4 @@ docker build -t ssorriaux/${PROJECT}-server:${VERSION} --build-arg MANGOS_SERVER
 docker tag ssorriaux/${PROJECT}-server:${VERSION} ssorriaux/${PROJECT}-server:latest
 docker push ssorriaux/${PROJECT}-server:${VERSION}
 docker push ssorriaux/${PROJECT}-server:latest
+docker rmi ssorriaux/${PROJECT}-server:latest ssorriaux/${PROJECT}-server:${VERSION}
