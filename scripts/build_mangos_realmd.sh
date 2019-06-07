@@ -10,7 +10,7 @@ git clone https://github.com/StephenSorriaux/mangos-docker.git
 
 cd mangos-docker/${PROJECT}/realmd
 
-docker build -t ssorriaux/${PROJECT}-realmd:${VERSION} --build-arg MANGOS_SERVER_VERSION=${VERSION} .
+docker build -t ssorriaux/${PROJECT}-realmd:${VERSION} --build-arg MANGOS_SERVER_VERSION=${VERSION} --build-arg THREAD_COUNT="-j2" .
 docker tag ssorriaux/${PROJECT}-realmd:${VERSION} ssorriaux/${PROJECT}-realmd:latest
 docker push ssorriaux/${PROJECT}-realmd:${VERSION}
 docker push ssorriaux/${PROJECT}-realmd:latest

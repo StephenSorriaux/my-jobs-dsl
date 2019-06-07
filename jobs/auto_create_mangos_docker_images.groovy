@@ -1,4 +1,4 @@
-def repoList = ['mangosone', 'mangostwo', 'mangosthree']
+def repoList = ['mangoszero','mangosone', 'mangostwo', 'mangosthree']
 
 repoList.each{ repo ->
 
